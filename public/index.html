@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <link rel="stylesheet" href="/src/styles/index.css">
+</head>
+<body>
+  <div id="container">
+    <header>
+      <h1>BUNNY.GG</h1>
+    </header>
+
+    <!-- 검색 -->
+    <div id="search_menu">
+
+      <div id="search_bar">
+        <input type="text" class="search_name" placeholder="Riot ID 검색">
+        <img id="search_button" src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/icon/search.png">
+
+      </div>
+
+    </div>
+
+    <!-- 플레이어 정보 -->
+    <div id="player_menu">
+
+      <div id="player">
+        <div id="player_icon">
+          <img src="https://opgg-static.akamaized.net/meta/images/profile_icons/profileIcon6634.jpg" alt="">
+          <div id="player_level"><span>100</span></div>
+        </div>
+        
+        <div id="player_info">
+          <h1><span id="nickname">닉네임</span> <span id="tag">#태그</span></h1>
+        </div>
+
+        <p id="result"></p>
+
+      </div>
+    </div>
+
+    <div id="integrate">
+
+      <div id="rank_info">
+        <section id="solo_rank">
+          <div id="rank_name">
+            <h5>솔로랭크</h5>
+          </div>
+
+          <div id="rank_data">
+            <hr>
+            <div id="rank_detail_data">
+              <img src="https://opgg-static.akamaized.net/images/medals_new/challenger.png?image=q_auto,f_webp,w_144&v=1721451321478" alt="솔랭티어">
+              
+              <div id="tier_name">
+                <h4>Challenger</h4>
+                <p><span>2</span> LP</p>
+              </div>
+
+              <div id="rank_num_data">
+                <p><span class="win">0</span>승 <span class="lose">0</span>패</p>
+                <p>승률 <span class="rate">0</span>%</p>
+              </div>
+            </div>
+          </div>
+
+        </section>
+    
+        <section id="flex_rank">
+          <div id="rank_name">
+            <h5>자유랭크</h5>
+          </div>
+
+          <div id="rank_data">
+            <hr>
+            <div id="rank_detail_data">
+              <img src="https://opgg-static.akamaized.net/images/medals_new/challenger.png?image=q_auto,f_webp,w_144&v=1721451321478" alt="솔랭티어">
+              
+              <div id="tier_name">
+                <h4>Challenger</h4>
+                <p><span>0</span> LP</p>
+              </div>
+
+              <div id="rank_num_data">
+                <p><span class="win">0</span>승 <span class="lose">0</span>패</p>
+                <p>승률 <span class="rate">0</span>%</p>
+              </div>
+
+            </div>
+          </div>
+          
+        </section>
+
+        <div id="latest_position">
+          <div id="position_data">
+            <div id="top">
+              <img src="https://s-lol-web.op.gg/images/icon/icon-position-top.svg" alt="top">
+              <br>
+              <span>0</span>
+            </div>
+
+            <div id="jungle">
+              <img src="https://s-lol-web.op.gg/images/icon/icon-position-jungle.svg" alt="jungle">
+              <br>
+              <span>0</span>
+            </div>
+
+            <div id="mid">
+              <img src="https://s-lol-web.op.gg/images/icon/icon-position-mid.svg" alt="mid">
+              <br>
+              <span>0</span>
+            </div>
+
+            <div id="bot">
+              <img src="https://s-lol-web.op.gg/images/icon/icon-position-adc.svg" alt="bot">
+              <br>
+              <span>0</span>
+            </div>
+
+            <div id="supporter">
+              <img src="https://s-lol-web.op.gg/images/icon/icon-position-support.svg" alt="supporter">
+              <br>
+              <span>0</span>
+            </div>
+
+            <div id="etc">
+              <img src="https://s-lol-web.op.gg/images/icon/icon-position-all.svg" alt="etc">
+              <br>
+              <span>0</span>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+
+      <div id="summary_info">
+        <!-- 최근 20게임 요약 정보 -->
+        <div id="summary_menu">
+          <div id="record">
+            <h2><span class="win">0</span>승 <span class="lose">0</span>패 / <span class="rate">0</span> %</h2>
+            <h2>KDA <span class="KDA">0</span></h2>
+            <p><span class="kill">0</span> / <span class="death">0</span> / <span class="assist">0</span></ㅔ>
+          </div>
+
+          <div id="latest_champion">
+            최근 챔피언
+          </div>
+
+
+        </div>
+  
+        <!-- 20개 게임 각각의 정보 -->
+        <div id="game20_menu">
+          <div class="game victory">
+            <div class="simple_data arena_simple_data">
+              <h5 class="mod">아레나</h5>
+              <p class="time">5시간 전</p>
+              <hr>
+              <p class="result">승리</p>
+              <p class="playtime">31분 21초</p>
+            </div>
+            <div class="champion">
+              <div class="game_data">
+                <img src="https://opgg-static.akamaized.net/meta/images/profile_icons/profileIcon6634.jpg" class="champion_icon" alt="champion">
+                <div class="champion_level">2</div>
+                <img src="https://opgg-static.akamaized.net/meta/images/profile_icons/profileIcon6634.jpg" class="champion_position" alt="">
+                <div class="spell">
+                  <div class="spell_div spell1">
+                    <img src="${SPELL_IMAGE_URL}/${participant.summoner1Id}_40.webp" class="d_spell" alt="">
+                  </div>
+                  <div class="spell_div spell2">
+                    <img src="${SPELL_IMAGE_URL}/${participant.summoner2Id}_40.webp" class="f_spell" alt="">
+                  </div>
+                </div>
+                <div class="rune">
+                  <div class="rune_div rune_1">
+                    <img src="${RUNE_IMAGE_URL}/${participant.perks.styles[0].selections[0].perk}.png" class="rune1" alt="">
+                  </div>
+                  <div class="rune_div rune_2">
+                    <img src="${RUNE_STYLE_URL}/${participant.perks.styles[1].style}.png" class="rune2" alt="">
+                  </div>
+                </div>
+                <div class="rune">
+                  <div class="rune_div rune_1">
+                    <img src="${RUNE_IMAGE_URL}/${participant.perks.styles[0].selections[0].perk}.png" class="rune1" alt="">
+                  </div>
+                  <div class="rune_div rune_2">
+                    <img src="${RUNE_STYLE_URL}/${participant.perks.styles[1].style}.png" class="rune2" alt="">
+                  </div>
+                </div>
+                <div class="score1">
+                  <p class="kda_area1">0<span class="kill"></span>/<span class="death">0</span>/<span class="assist">0</span></p>
+                  <p class="kda_area2"><span class="kda"></span> KDA</p>
+                </div>
+              </div>
+              <div class="item">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+              </div>
+            </div>
+
+            <div class="arena_score">
+              <p>1등</p>
+            </div>
+          
+            
+
+            <div class="arena_users">
+
+              <div class="score1_4">
+                <div class="arena_team team1">
+                  <h5 class="team_score">1등</h5>
+                  <div class="arena_user">
+
+                    <img src="https://opgg-static.akamaized.net/meta/images/lol/14.15.1/champion/Kaisa.png" class="arena_champion_icon" alt="">
+
+                    <div class="arena_user_data">
+                      <p>아기토끼</p>
+
+                      <div class="arena_bar-total">
+                        <div class="arena_dps-value damage" id="totalDamage"></div>
+                        <div class="arena_dps-value total"></div>
+                      </div>
+                    </div>
+
+
+                  </div>
+                  
+                  <div class="arena_user">
+
+                    <img src="https://opgg-static.akamaized.net/meta/images/lol/14.15.1/champion/Kaisa.png" class="arena_champion_icon" alt="">
+
+                    <div class="arena_user_data">
+                      <p>아기토끼</p>
+
+                      <div class="arena_bar-total">
+                        <div class="arena_dps-value damage" id="totalDamage"></div>
+                        <div class="arena_dps-value total"></div>
+                      </div>
+                    </div>
+
+
+                  </div>
+                </div>
+  
+                <div class="arena_team team2">
+                  <h5 class="team_score">2등</h5>
+                  <div class="arena_user">
+
+                    <img src="https://opgg-static.akamaized.net/meta/images/lol/14.15.1/champion/Kaisa.png" class="arena_champion_icon" alt="">
+
+                    <div class="arena_user_data">
+                      <p>아기토끼</p>
+
+                      <div class="arena_bar-total">
+                        <div class="arena_dps-value damage" id="totalDamage"></div>
+                        <div class="arena_dps-value total"></div>
+                      </div>
+                    </div>
+
+
+                  </div>
+                  <div class="arena_user">
+
+                    <img src="https://opgg-static.akamaized.net/meta/images/lol/14.15.1/champion/Kaisa.png" class="arena_champion_icon" alt="">
+
+                    <div class="arena_user_data">
+                      <p>아기토끼</p>
+
+                      <div class="arena_bar-total">
+                        <div class="arena_dps-value damage" id="totalDamage"></div>
+                        <div class="arena_dps-value total"></div>
+                      </div>
+                    </div>
+
+
+                  </div>
+                </div>
+  
+                <div class="arena_team team3">
+                  <h5 class="team_score">3등</h5>
+                  <div class="arena_user">
+
+                    <img src="https://opgg-static.akamaized.net/meta/images/lol/14.15.1/champion/Kaisa.png" class="arena_champion_icon" alt="">
+
+                    <div class="arena_user_data">
+                      <p>아기토끼</p>
+
+                      <div class="arena_bar-total">
+                        <div class="arena_dps-value damage" id="totalDamage"></div>
+                        <div class="arena_dps-value total"></div>
+                      </div>
+                    </div>
+
+
+                  </div>
+                  <div class="arena_user">
+
+                    <img src="https://opgg-static.akamaized.net/meta/images/lol/14.15.1/champion/Kaisa.png" class="arena_champion_icon" alt="">
+
+                    <div class="arena_user_data">
+                      <p>아기토끼</p>
+
+                      <div class="arena_bar-total">
+                        <div class="arena_dps-value damage" id="totalDamage"></div>
+                        <div class="arena_dps-value total"></div>
+                      </div>
+                    </div>
+
+
+                  </div>
+                </div>
+  
+                <div class="arena_team team4">
+                  <h5 class="team_score">4등</h5>
+                  <div class="arena_user">
+
+                    <img src="https://opgg-static.akamaized.net/meta/images/lol/14.15.1/champion/Kaisa.png" class="arena_champion_icon" alt="">
+
+                    <div class="arena_user_data">
+                      <p>아기토끼</p>
+
+                      <div class="arena_bar-total">
+                        <div class="arena_dps-value damage" id="totalDamage"></div>
+                        <div class="arena_dps-value total"></div>
+                      </div>
+                    </div>
+
+
+                  </div>
+                  <div class="arena_user">
+
+                    <img src="https://opgg-static.akamaized.net/meta/images/lol/14.15.1/champion/Kaisa.png" class="arena_champion_icon" alt="">
+
+                    <div class="arena_user_data">
+                      <p>아기토끼</p>
+
+                      <div class="arena_bar-total">
+                        <div class="arena_dps-value damage" id="totalDamage"></div>
+                        <div class="arena_dps-value total"></div>
+                      </div>
+                    </div>
+
+
+                  </div>
+                </div>
+              </div>
+
+              <div class="score5_8">
+                <div class="arena_team team5">
+                  <h5 class="team_score">5등</h5>
+                  <div class="arena_user">
+
+                    <img src="https://opgg-static.akamaized.net/meta/images/lol/14.15.1/champion/Kaisa.png" class="arena_champion_icon" alt="">
+
+                    <div class="arena_user_data">
+                      <p>아기토끼</p>
+
+                      <div class="arena_bar-total">
+                        <div class="arena_dps-value damage" id="totalDamage"></div>
+                        <div class="arena_dps-value total"></div>
+                      </div>
+                    </div>
+
+
+                  </div>
+                  <div class="arena_user">
+
+                    <img src="https://opgg-static.akamaized.net/meta/images/lol/14.15.1/champion/Kaisa.png" class="arena_champion_icon" alt="">
+
+                    <div class="arena_user_data">
+                      <p>아기토끼</p>
+
+                      <div class="arena_bar-total">
+                        <div class="arena_dps-value damage" id="totalDamage"></div>
+                        <div class="arena_dps-value total"></div>
+                      </div>
+                    </div>
+
+
+                  </div>
+                </div>
+  
+                <div class="arena_team team6">
+                  <h5 class="team_score">6등</h5>
+                  <div class="arena_user">
+
+                    <img src="https://opgg-static.akamaized.net/meta/images/lol/14.15.1/champion/Kaisa.png" class="arena_champion_icon" alt="">
+
+                    <div class="arena_user_data">
+                      <p>아기토끼</p>
+
+                      <div class="arena_bar-total">
+                        <div class="arena_dps-value damage" id="totalDamage"></div>
+                        <div class="arena_dps-value total"></div>
+                      </div>
+                    </div>
+
+
+                  </div>
+                  <div class="arena_user">
+
+                    <img src="https://opgg-static.akamaized.net/meta/images/lol/14.15.1/champion/Kaisa.png" class="arena_champion_icon" alt="">
+
+                    <div class="arena_user_data">
+                      <p>아기토끼</p>
+
+                      <div class="arena_bar-total">
+                        <div class="arena_dps-value damage" id="totalDamage"></div>
+                        <div class="arena_dps-value total"></div>
+                      </div>
+                    </div>
+
+
+                  </div>
+                </div>
+  
+                <div class="arena_team team7">
+                  <h5 class="team_score">7등</h5>
+                  <div class="arena_user">
+
+                    <img src="https://opgg-static.akamaized.net/meta/images/lol/14.15.1/champion/Kaisa.png" class="arena_champion_icon" alt="">
+
+                    <div class="arena_user_data">
+                      <p>아기토끼</p>
+
+                      <div class="arena_bar-total">
+                        <div class="arena_dps-value damage" id="totalDamage"></div>
+                        <div class="arena_dps-value total"></div>
+                      </div>
+                    </div>
+
+
+                  </div>
+                  <div class="arena_user">
+
+                    <img src="https://opgg-static.akamaized.net/meta/images/lol/14.15.1/champion/Kaisa.png" class="arena_champion_icon" alt="">
+
+                    <div class="arena_user_data">
+                      <p>아기토끼</p>
+
+                      <div class="arena_bar-total">
+                        <div class="arena_dps-value damage" id="totalDamage"></div>
+                        <div class="arena_dps-value total"></div>
+                      </div>
+                    </div>
+
+
+                  </div>
+                </div>
+  
+                <div class="arena_team team8">
+                  <h5 class="team_score">8등</h5>
+                  <div class="arena_user">
+
+                    <img src="https://opgg-static.akamaized.net/meta/images/lol/14.15.1/champion/Kaisa.png" class="arena_champion_icon" alt="">
+
+                    <div class="arena_user_data">
+                      <p>아기토끼</p>
+
+                      <div class="arena_bar-total">
+                        <div class="arena_dps-value damage" id="totalDamage"></div>
+                        <div class="arena_dps-value total"></div>
+                      </div>
+                    </div>
+
+
+                  </div>
+                  <div class="arena_user">
+
+                    <img src="https://opgg-static.akamaized.net/meta/images/lol/14.15.1/champion/Kaisa.png" class="arena_champion_icon" alt="">
+
+                    <div class="arena_user_data">
+                      <p>아기토끼</p>
+
+                      <div class="arena_bar-total">
+                        <div class="arena_dps-value damage" id="totalDamage"></div>
+                        <div class="arena_dps-value total"></div>
+                      </div>
+                    </div>
+
+
+                  </div>
+                </div>
+              </div>
+
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script type="module" src="/main.js"></script>
+  <script type="module" src="/src/api/api.js"></script>
+  <script type="module" src="/src/components/dom.js"></script>
+  <script type="module" src="/src/helpers/utils.js"></script>
+</body>
+</html>

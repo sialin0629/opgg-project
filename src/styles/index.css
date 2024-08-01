@@ -1,0 +1,501 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #14141a;
+}
+
+#container {
+  width: 1080px;
+  margin: 0 auto;
+}
+
+#container section {
+  margin: 10px 0;
+  border: 1px solid rgb(64, 64, 92);
+  border-radius: 5px;
+  color: #FFF;
+}
+
+/* 로고 */
+header h1 {
+  color: #FFF;
+  font-size: 35pt;
+  margin-top: 30px;
+}
+
+/* 검색메뉴 */
+#search_menu {
+  height: 100px;
+  padding-top: 25px;
+}
+
+#search_bar {
+  width: 500px; height: 40px;
+  border-radius: 5px;
+  background-color: #FFF;
+  position: absolute;
+}
+
+#search_bar input {
+  width: 100%;
+  border-radius: 5px;
+  padding: 10px 12px;
+  font-size: 14px;
+}
+
+#search_button {
+  position : absolute;
+  width: 17px;
+  top: 10px;
+  right: 12px;
+  margin: 0;
+}
+
+/* 통합 메뉴 */
+#integrate {
+  display: flex;
+}
+
+#rank_info {
+  width: 30%;
+  margin-right: 10px;
+}
+
+#summary_info {
+  width: 70%;
+}
+
+/* 플레이어 정보 메뉴 */
+#player_menu {
+  height: 200px;
+  padding: 15px 15px 15px 0px;
+  display: flex;
+  color: #FFF;
+}
+
+#player {
+  flex: 3;
+  display: flex;
+}
+
+#player_icon {
+  position: relative;
+}
+
+#player_icon img {
+  width: 150px;
+  margin-right: 20px;
+  border-radius: 10px;
+}
+
+#player_level {
+  position: absolute;
+  top: 135px;
+  left: 50px;
+  background-color: rgb(107, 102, 102);
+  width: 50px; height: 30px;
+  text-align: center;
+  color: #FFF;
+  padding: 4px;
+  font-size: 12pt;
+  border-radius: 5px;
+}
+
+#tag {
+  color: rgb(99, 99, 99);
+  font-size: 20pt;
+}
+
+/* 랭크 지표 메뉴 */
+#rank_info section {
+  padding: 10px;
+}
+
+#rank_name {
+  display: flex;
+  justify-content: space-between;
+  color: #d1d1d1;
+}
+
+#rank_info section hr {
+  margin-top: 10px;
+  border: 1px solid rgb(64, 64, 92)
+}
+
+#rank_detail_data {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+}
+
+#rank_detail_data img {
+  width: 80px;
+  margin-right: 10px;
+  background-color: rgb(31, 35, 49);
+  border-radius: 10px;
+}
+
+#tier_name {
+  flex: 2;
+}
+
+#tier_name p {
+  margin-top: 4px;
+  font-size: 10pt;
+  color: rgb(156, 156, 156);
+}
+
+#rank_num_data {
+  padding-top: 5px;
+}
+
+#rank_num_data p{
+  font-size: 8pt;
+  color: rgb(156, 156, 156);
+  text-align: end;
+  line-height: 21px;
+}
+
+/* 20개 게임 요약 메뉴 */
+#summary_menu {
+  margin: 10px 0;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  padding: 20px;
+  background-color: rgb(31, 35, 49);
+  color: #FFF;
+}
+
+#record {
+  flex: 1;
+}
+
+#latest_champion {
+  flex: 1;
+}
+
+#latest_position {
+  flex: 1;
+}
+
+#position_data {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+/* 20개 게임들 */
+
+
+.game { 
+  display: flex;
+  align-items: center;
+  padding: 10px 0px;
+  margin-bottom: 10px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  color: #FFF;
+}
+
+.victory { 
+  background-color: rgb(33, 58, 150, 0.3); 
+  border-left: 5px solid rgb(33, 58, 150);
+}
+
+.defeat {
+  background-color: rgb(227, 70, 70, 0.3);
+  border-left: 5px solid rgb(227, 70, 70);
+}
+
+.simple_data {
+  flex: 1.3;
+  margin-left: 10px;
+  line-height: 15px;
+}
+
+.mod_win {
+  color: rgb(11 137 207);
+}
+
+.mod_lose {
+  color: rgb(227 70 70)
+}
+
+.simple_data p{
+  font-size: 7pt;
+  color: silver;
+  font-weight: 600;
+}
+
+.simple_data hr{
+  margin: 10px 0;
+  width: 50%;
+}
+
+.champion {
+  flex: 2.5;
+  border-right: 1px solid rgb(49, 49, 49);
+}
+
+.game_data {
+  display: flex;
+  position: relative;
+}
+
+.champion_icon {
+  width: 55px;
+  height: 55px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+}
+
+.champion_level {
+  position: absolute;
+  top: 40px;
+  background-color: rgb(26, 25, 25);
+  width: 20px; height: 15px;
+  text-align: center;
+  color: #FFF;
+  padding: 2px;
+  font-size: 6pt;
+  font-weight: 900;
+  border-top-right-radius: 5px;
+}
+
+.champion_position {
+  position: absolute;
+  top: 35px;
+  left: 35px;
+  width: 20px; height: 20px;
+  background-color: rgb(0, 0, 0);
+  text-align: center;
+  padding: 2px;
+  font-size: 6pt;
+  font-weight: 900;
+}
+
+.spell img {
+  width: 25px;
+  border-radius: 5px;
+}
+
+.spell_div {
+  width: 25px;
+  height: 25px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.spell1 {
+  margin-bottom: 4px;
+}
+
+.rune {
+  width: 25px;
+}
+
+.arena_rune {
+  margin-left: 3px;
+  margin-right: 3px;
+}
+
+.rune img {
+  width: 25px;
+}
+
+.rune_div {
+  width: 25px;
+  height: 25px;
+  border-radius: 30px;
+  background-color: black;
+}
+
+.rune_1 {
+  margin-bottom: 4px;
+}
+
+.item {
+  display: flex;
+}
+
+.item div {
+  width: 30px;
+  height: 30px;
+  background-color: rgb(79, 87, 112);
+  margin-right: 3px;
+  border-radius: 5px;
+}
+
+.item img { 
+  width: 30px;
+  border-radius: 5px;
+}
+
+.score1 {
+  width: 100px;
+  text-align: center;
+  padding: 5px;
+  margin-left: 10px;
+  margin-top: 5px;
+  margin-right: 10px;
+}
+
+.kda_area1 {
+  font-size: 12pt;
+  font-weight: 600;
+}
+
+.kda_area1 span {
+  margin: 0 3px;
+}
+
+.score1 .death { color: red; }
+
+.bar-total {
+  background-color: lightgray;
+  height: 5px;
+  position: relative;
+  width: 120px;
+}
+
+.score {
+  margin-left: 10px;
+  margin-right: 50px;
+}
+
+.arena_score {
+  flex: 0.5;
+  text-align: center;
+}
+
+
+.arena_ranking {
+  text-align: center;
+}
+
+.score p:nth-of-type(1) {
+  font-weight: 700;
+  font-size: 8pt;
+  color: rgb(139, 139, 139);
+}
+
+.score p:nth-of-type(2) {
+  font-weight: 800;
+  margin-bottom: 5px;
+}
+
+.bar-value {
+  position: absolute;
+  height: 100%;
+  text-align: right;
+  padding-right: 5px;
+  color: white;
+  line-height: 25px;
+}
+
+.bar-value.damage {
+  background-color: rgb(247, 73, 73);
+}
+
+.kda_area2 {
+  font-size: 10pt;
+  color: rgb(139, 139, 139);
+}
+
+.score2 {
+  flex: 2;
+  text-align: center;
+}
+
+.score2 p {
+  color: rgb(139, 139, 139);
+  font-size: 8pt;
+}
+
+.score2 span {
+  color: #FFF;
+  font-size: 10pt;
+}
+
+.score2 .multikill {
+  display: inline-block;
+  width: 55px;
+  line-height: 20px;
+  color: #FFF;
+  font-size: 8pt;
+  font-weight: 900;
+  background-color: rgb(247, 73, 73);
+  border-radius: 20px;
+  margin: 0 auto;
+}
+
+.users {
+  flex: 3;
+  display: flex;
+  justify-content: space-between;
+  margin-right: 10px;
+  font-size: 10pt;
+}
+
+.arena_users {
+  flex: 4.277;
+  display: flex;
+}
+
+.users p {
+  width: 105px;
+  font-size: 8pt;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.arena_user {
+  display: flex;
+}
+
+.arena_users p {
+  width: 50px;
+  font-size: 7pt;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.arena_team {
+  display: flex;
+}
+
+.team_score {
+  margin: 0 5px;
+}
+
+.arena_champion_icon_area {
+  display: flex;
+}
+
+.arena_champion_icon {
+  width: 15px;
+  height: 15px;
+}
+
+.arena_bar-total {
+  background-color: lightgray;
+  height: 3px;
+  position: relative;
+  width: 50px;
+}
+
+.arena_dps-value .damage {
+  background-color: rgb(247, 73, 73);
+}
+
+.arena_dps-value {
+  position: absolute;
+  height: 100%;
+}
